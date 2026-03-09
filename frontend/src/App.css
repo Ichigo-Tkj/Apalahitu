@@ -1,0 +1,230 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f5f9;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #0f172a;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== TITLE ===== */
+.container h1 {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CARD (FORM) ===== */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== INPUT ===== */
+.card input[type="text"],
+.card input[type="file"],
+.card input:not([type]) {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ===== BUTTON TAMBAH ===== */
+.card button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* ===== LIST ===== */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== ITEM ===== */
+.item {
+  background: white;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== NAMA ITEM ===== */
+.item span {
+  font-weight: 500;
+}
+
+/* ===== BUTTON DELETE ===== */
+.item button {
+  border: none;
+  /* background: #ef4444; */
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.item button:hover {
+  /* background: #dc2626; */
+  transform: scale(1.05);
+}
+
+/* ===== EMPTY STATE (optional) ===== */
+.list:empty::after {
+  content: "Belum ada data 😢";
+  display: block;
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+  background: white;
+  border-radius: 12px;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #0f172a;           /* ✅ teks jadi gelap */
+}
+
+/* placeholder */
+.card input::placeholder {
+  color: #9ca3af;           /* abu placeholder */
+}
+
+/* ===== POPUP ===== */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  z-index: 999;
+  animation: slideIn 0.3s ease;
+}
+
+.popup.error {
+  background: #ef4444;
+}
+
+.popup.success {
+  background: #22c55e;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  /* background: #f59e0b; */
+  background: #22c55e;
+  /* color: white; */
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #6b7280;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
